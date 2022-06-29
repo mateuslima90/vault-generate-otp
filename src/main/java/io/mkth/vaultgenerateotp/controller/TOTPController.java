@@ -32,7 +32,7 @@ public class TOTPController {
     public Mono<TOTPResponse> validateOTP(@PathVariable("username") String user,
                                           @RequestBody TOTPValidation totp)  {
         logger.info("Validating a totp to user {}", user);
-        logger.info("Validating a totp {}", totp);
+        logger.info("Validating a totp {}", totp.getCode());
         //logger.info("Init sleep")
         //Thread.sleep(4900)
         //logger.info("Terminate sleep")

@@ -53,7 +53,7 @@ public class TOTPService {
                 .map(path -> writeTOTP(path, codeValidation(code)))
                 .filter(lr -> !lr.getData().isEmpty())
                 .map(otp -> new TOTPResponse(Boolean.valueOf(otp.getData().get(VALID))))
-                .doOnSuccess(user -> logger.info("Validate a totp with success to user {}", user))
+                .doOnSuccess(user -> logger.info("Validate a totp with success to user {}", username))
                 .onErrorResume(response -> Mono.error(response))
                 .defaultIfEmpty(new TOTPResponse(false));
     }

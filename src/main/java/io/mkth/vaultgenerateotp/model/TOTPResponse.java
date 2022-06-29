@@ -1,5 +1,7 @@
 package io.mkth.vaultgenerateotp.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class TOTPResponse {
 
     private Boolean isValid;
@@ -8,11 +10,11 @@ public class TOTPResponse {
         this.isValid = isValid;
     }
 
-    public Boolean getValid() {
+    public Boolean getIsValid() {
         return isValid;
     }
 
-    public void setValid(Boolean valid) {
+    public void setIsValid(Boolean valid) {
         isValid = valid;
     }
 }
